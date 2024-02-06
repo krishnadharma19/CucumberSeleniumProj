@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class Telecom {
 
-	@Test
+//	@Test
 	public void test1() throws IOException {
 		Assert.assertTrue(true);
 	}
