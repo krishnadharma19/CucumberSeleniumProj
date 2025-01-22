@@ -5,6 +5,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.PropertiesReader;
 
+import java.time.Duration;
+
 public class Login {
 
 	private WebDriver driver = Hooks.driver;
@@ -13,7 +15,7 @@ public class Login {
 
 	public Login() throws Exception {
 		PropertiesReader propertiesReader = new PropertiesReader();
-		this.wait = new WebDriverWait(driver, propertiesReader.getTimeout());
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(propertiesReader.getTimeout()));
 	}
 
 }
