@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.OutputType;
@@ -25,8 +26,8 @@ public class Hooks {
 		ChromeOptions options = new ChromeOptions();
 		driver = new ChromeDriver(options);
 		PropertiesReader propertiesReader = new PropertiesReader();
-		driver.manage().timeouts().implicitlyWait(propertiesReader.getTimeout(), TimeUnit.SECONDS);
-		driver.manage().timeouts().setScriptTimeout(propertiesReader.getTimeout(), TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(propertiesReader.getTimeout()));
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(propertiesReader.getTimeout()));
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
 	}
